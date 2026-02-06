@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  background: #0b1020;
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(35, 240, 199, 0.4);
+}
+
+.pilot-card {
+  @apply rounded-2xl border border-white/10 bg-card-gradient shadow-card backdrop-blur;
+}
+
+.pilot-pill {
+  @apply rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide;
+}
+
+.pilot-button {
+  @apply rounded-xl bg-pilot-neon text-pilot-night font-semibold shadow-glow transition hover:-translate-y-0.5 hover:shadow-xl;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
