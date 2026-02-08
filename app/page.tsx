@@ -191,8 +191,8 @@ export default function HomePage() {
           onToggleCaptain={setCaptainMode}
         />
 
-        <div className="grid gap-6 xl:grid-cols-[300px_1fr_320px]">
-          <div className="flex flex-col gap-4">
+        <div className="grid gap-6 xl:grid-cols-[300px_1fr_320px] xl:items-start">
+          <div className="flex flex-col gap-4 xl:max-h-[calc(100vh-220px)] xl:overflow-y-auto xl:pr-2 xl:scrollbar-hidden">
             <VenuePicker
               venues={venues}
               selectedId={selectedId}
@@ -238,7 +238,7 @@ export default function HomePage() {
             <MetricsCard metrics={metrics} />
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 xl:max-h-[calc(100vh-220px)] xl:overflow-y-auto xl:pr-2 xl:scrollbar-hidden">
             {detail?.recommendation ? (
               <RecommendationPanel
                 recommendation={detail.recommendation}

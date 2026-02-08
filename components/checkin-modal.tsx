@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 import { MOODS } from "@/lib/types";
-import type { Venue } from "@/lib/types";
+import type { Mood, Venue } from "@/lib/types";
 
 const moodLabels: Record<string, string> = {
   [MOODS[0]]: "Chill",
@@ -32,7 +32,7 @@ export function CheckinModal({
   onSubmitted: () => void;
 }) {
   const [queue, setQueue] = useState(15);
-  const [mood, setMood] = useState(MOODS[0]);
+  const [mood, setMood] = useState<Mood>(MOODS[0]);
   const [note, setNote] = useState("");
   const [photo, setPhoto] = useState(true);
   const [loading, setLoading] = useState(false);

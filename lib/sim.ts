@@ -65,7 +65,7 @@ function makeVenue(data: {
   } satisfies Venue;
 }
 
-function randomItem<T>(items: T[]) {
+function randomItem<T>(items: readonly T[]) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
@@ -178,7 +178,7 @@ function seedCheckins(venues: Venue[]) {
       venueId: venue.id,
       timestamp,
       queuePeopleEstimate: Math.floor(5 + Math.random() * 55),
-      mood: randomItem(MOODS as Mood[]),
+      mood: randomItem(MOODS),
       note: randomItem(NOTES),
       user: randomItem(HANDLE_POOL),
       photoUrl: "/mock-photo.svg"
